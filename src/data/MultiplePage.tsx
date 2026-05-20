@@ -1,4 +1,4 @@
-const featuresData = [
+export const featuresData = [
   {
     title: "Multiple Payment Methods",
     description: "ABA PayWay is integrated with all popular payment methods in Cambodia. So, you can accept cashless payments online and in person instantly and hassle-free in both KHR and USD.",
