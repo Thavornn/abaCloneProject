@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+/* =========================
+   YOUR DESIGN TOKENS
+========================= */
+:root {
+  --primary: #11bcd4;
+  --aba-dark: #0e2d3a;
+  --gray: #4e4e4e;
+  --light-gray: #666666;
+}
+
+/* optional utility colors */
+.text-primary {
+  color: var(--primary);
+}
+.text-light-gray {
+  color: var(--light-gray);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+.border-primary {
+  border-color: var(--primary);
+}
+
+
+/* =========================
+   BACKGROUND CLIP TEXT
+========================= */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* =========================
+   MARQUEE ANIMATION
+========================= */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Tailwind v4 animation utilities */
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+/* =========================
+   BASE RESET
+========================= */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  /* 
+  body {
+    margin: 0;
+    background: white;
+    color: black;
+  } */
+}
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
