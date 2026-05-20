@@ -1,6 +1,6 @@
 export default function FeatureSpilt() {
   return (
-    <div className="flex flex-col md:flex-row gap-10 ">
+    <div className="flex flex-col ">
       {/* Text */}
       <div>hello</div>
 

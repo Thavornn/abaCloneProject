@@ -1,4 +1,5 @@
 import Advantage from "./components/Advantage";
+import FeatureSpilt from "./components/FeatureSpilt";
 import HeroSection from "./components/Hero";
 import Navbar from "./components/Navbar";
 import PaymentSolutions from "./components/PaymentSolutions";
@@ -12,8 +13,7 @@ function App() {
         <TrustedPartners />
         <PaymentSolutions />
         <Advantage />
-
-        
+        <FeatureSpilt />
       </div>
     </div>
   );

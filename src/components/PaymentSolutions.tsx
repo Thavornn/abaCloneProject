@@ -1,11 +1,11 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { PaymenTabs } from "../data/PaymentTabs";
 import { Category } from "iconsax-reactjs";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 export default function PaymentSolutions() {
   return (
-    <div className="font-raleway max-w-screen-2xl mx-auto text-center  mt-50 h-30">
+    <div className="font-raleway max-w-screen-2xl mx-auto text-center  mt-50 h-110">
       {/* Article */}
       <div className="">
         <h2 className="font-bold text-[42px] flex justify-center text-gray mt-6">
@@ -53,31 +53,35 @@ export default function PaymentSolutions() {
               <TabsContent
                 key={category.id}
                 value={category.id}
-                className="mt-6 focus-visible:outline-none"
+                className="mt-6 "
               >
                 <div className="w-full text-left">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-36">
                     {category.cards.map((card) => {
                       return (
                         <div
                           className="p-8 rounded-[24px] bg-[#f8fbff] text-left relative 
-              flex flex-col justify-between min-h-[260px] border border-transparent 
-              hover:bg-white hover:border-gray-100 hover:shadow-md transition-all duration-300 group cursor-pointer"
+                          flex flex-col justify-between  border border-transparent 
+                          hover:bg-gradient-to-r from-[#438BB0] to-[#11bcd4] 
+                          duration-300 group  w-100 "
                         >
                           {/* Icon */}
                           <div className="flex justify-between items-start mb-6 w-full">
-                            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-cyan-600 border border-gray-50">
+                            <div
+                              className="w-12 h-12 rounded-full bg-slate-50 group-hover:bg-white
+                              flex items-center justify-center shadow-sm text-sky-800 border border-gray-50"
+                            >
                               {card.icon}
                             </div>
-                            <ArrowUpRightIcon
+                            <ArrowRightIcon
                               size={18}
-                              className="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                              className="text-sky-800  group-hover:text-white"
                             />
                           </div>
-                          <h2 className="text-xl font-bold mb-2">
+                          <h2 className="text-[22px] text-gray-600 group-hover:text-white font-semibold ">
                             {card.title}
                           </h2>
-                          <p className="text-gray-500 text-[14px] leading-relaxed">
+                          <p className="text-gray-700 group-hover:text-white  text-[18px] font-medium leading-relaxed">
                             {card.description}
                           </p>
                         </div>
@@ -92,6 +96,4 @@ export default function PaymentSolutions() {
       </div>
     </div>
   );
-
-
 }
