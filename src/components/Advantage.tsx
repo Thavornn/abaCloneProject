@@ -2,7 +2,7 @@ import { advantages } from "../data/advantages";
 
 export default function Advantage() {
   return (
-    <div className="bg-gray-50 mt-5 h-170">
+    <div className="bg-gray-50 mt-5 h-200">
       <div className="font-raleway max-w-screen-2xl mx-auto text-center mt-20 h-30">
         {/* first sec */}
         <div className="pt-30">
