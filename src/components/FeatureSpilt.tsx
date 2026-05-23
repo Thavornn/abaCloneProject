@@ -19,8 +19,8 @@ export default function FeatureSpilt() {
               </p>
               {feature.button && (
                 <button
-                  className="bg-primary p-5 rounded-xl px-10 mt-4 font-bold text-white text-xl
-                  
+                  className="bg-primary p-5 rounded-xl px-13 mt-4 font-bold text-white text-lg
+
                   "
                 >
                   {feature.button}
