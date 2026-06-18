@@ -1,11 +1,10 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { PaymenTabs } from "../data/PaymentTabs";
-import { Category } from "iconsax-reactjs";
 import { ArrowRightIcon } from "lucide-react";
 
 export default function PaymentSolutions() {
   return (
-    <div className="font-raleway max-w-screen-2xl mx-auto text-center  mt-50 h-110">
+    <div className="font-raleway max-w-screen-2xl mx-auto text-center  mt-50 ">
       {/* Article */}
       <div className="">
         <h2 className="font-bold text-[42px] flex justify-center text-gray mt-6">
@@ -21,8 +20,11 @@ export default function PaymentSolutions() {
       {/*Tabs Section */}
 
       <div>
-        <div className="px-20 w-full mt-5 flex justify-center">
-          <Tabs defaultValue="online" className="w-full ">
+        <div className="px-20 w-full mt-5    justify-center">
+          <Tabs
+            defaultValue="online"
+            className="w-full flex flex-col items-center"
+          >
             <TabsList
               className=" w-full h-auto p-0 bg-transparent rounded-none
               border-b-4 border-gray-50 flex justify-between "
@@ -56,7 +58,7 @@ export default function PaymentSolutions() {
                 className="mt-6 "
               >
                 <div className="w-full text-left">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-36">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     {category.cards.map((card) => {
                       return (
                         <div

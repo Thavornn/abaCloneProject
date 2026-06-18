@@ -10,4 +10,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // 👇 Add this server block right here!
+  // server: {
+  //   host: "0.0.0.0", // Allows Vite to receive requests from your Docker Swarm proxy
+  //   port: 5173,
+  //   allowedHosts: [
+  //     ".ngrok-free.dev", // Universally accepts any ngrok tunnel URL
+  //     ".ngrok-free.app",
+  //   ],
+  // },
 });

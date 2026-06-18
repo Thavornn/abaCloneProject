@@ -1,5 +1,6 @@
 import Advantage from "./components/Advantage";
 import FeatureSpilt from "./components/FeatureSpilt";
+import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
 import Navbar from "./components/Navbar";
 import PaymentSolutions from "./components/PaymentSolutions";
@@ -14,6 +15,7 @@ function App() {
         <PaymentSolutions />
         <Advantage />
         <FeatureSpilt />
+        <Footer />
       </div>
     </div>
   );
