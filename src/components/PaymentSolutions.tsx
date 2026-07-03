@@ -1,6 +1,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { PaymenTabs } from "../data/PaymentTabs";
 import { ArrowRightIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function PaymentSolutions() {
   return (
@@ -62,10 +63,10 @@ export default function PaymentSolutions() {
                     {category.cards.map((card) => {
                       return (
                         <div
-                          className="p-8 rounded-[24px] bg-[#f8fbff] text-left relative 
-                          flex flex-col justify-between  border border-transparent 
+                          className="p-8 rounded-[24px] bg-[#ffffff] text-left relative 
+                          flex flex-col justify-between  border border-gray-50/60 shadow-[0_10px_35px_rgba(0,0,0,0.03)]
                           hover:bg-gradient-to-r from-[#438BB0] to-[#11bcd4] 
-                          duration-300 group  w-100 "
+                          duration-300 group w-full   "
                         >
                           {/* Icon */}
                           <div className="flex justify-between items-start mb-6 w-full">
@@ -73,7 +74,17 @@ export default function PaymentSolutions() {
                               className="w-12 h-12 rounded-full bg-slate-50 group-hover:bg-white
                               flex items-center justify-center shadow-sm text-sky-800 border border-gray-50"
                             >
-                              {card.icon}
+                              <motion.div
+                                initial={{ opacity: 0, scale: 1.5, y: -5 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.1 }}
+                                transition={{
+                                  duration: 3,
+                                  ease: [0.16, 1, 0.3, 1],
+                                }}
+                              >
+                                {card.icon}
+                              </motion.div>
                             </div>
                             <ArrowRightIcon
                               size={18}

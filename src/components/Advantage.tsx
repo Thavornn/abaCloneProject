@@ -1,4 +1,5 @@
 import { advantages } from "../data/advantages";
+import { motion } from "framer-motion";
 
 export default function Advantage() {
   return (
@@ -16,7 +17,14 @@ export default function Advantage() {
             <div key={idx} className="flex flex-col items-center text-center ">
               {/*Icon */}
               <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-6 border  border-slate-100">
-                {item.icon}
+                <motion.div
+                  initial={{ opacity: 0, scale: 2, y: -5 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.9 }}
+                  transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {item.icon}
+                </motion.div>
               </div>
               {/*Text */}
               <h3 className="text-[22px] font-semibold text-gray">

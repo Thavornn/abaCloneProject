@@ -1,8 +1,11 @@
 import { Global, ToggleOnCircle } from "iconsax-reactjs";
 import paywayLogo from "../assets/payway-logo.svg";
 import divider from "../assets/navi-divider.svg";
+import { useState } from "react";
+import ProductMegaMenu from "./ProductMegaMenu";
 
 export default function Navbar() {
+  const [isProductOpen, setIsProductOpen] = useState(false);
   return (
     <nav className="w-full  sticky top-0 z-50 bg-white ">
       <div className="flex justify-between items-center max-w-[1459px] mx-auto  h-25 ">
@@ -13,25 +16,30 @@ export default function Navbar() {
 
         {/* Menu */}
         <div className="">
-          <ul className="flex gap-8 list-none text-xl  ">
+          <ul className="flex gap-8 list-none text-xl  items-center">
             <li className="">
-              <a
-                href="#"
-                className=" hover:text-primary
-              "
+              <button
+                onClick={() => setIsProductOpen(!isProductOpen)}
+                className={`hover:text-primary  transition-colors h-25 flex items-center ${
+                  isProductOpen ? "text-primary border-b-2 border-primary" : ""
+                }`}
               >
                 Products
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">
+              <a
+                href="https://developer.payway.com.kh/"
+                className="hover:text-primary"
+                target="_blank"
+              >
                 Developers
               </a>
             </li>
             <li>
-              <button className="hover:text-primary flex item-center">
+              <a href="/about-us" className="hover:text-primary">
                 About Us
-              </button>
+              </a>
             </li>
             <li>
               <button className="hover:text-primary flex item-center">
@@ -62,6 +70,10 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      <ProductMegaMenu
+        isOpen={isProductOpen}
+        onClose={() => setIsProductOpen(false)}
+      />
     </nav>
   );
 }

@@ -1,24 +1,14 @@
-import Advantage from "./components/Advantage";
-import FeatureSpilt from "./components/FeatureSpilt";
-import Footer from "./components/Footer";
-import HeroSection from "./components/Hero";
-import Navbar from "./components/Navbar";
-import PaymentSolutions from "./components/PaymentSolutions";
-import TrustedPartners from "./components/TrustedPartners";
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages.tsx/Home";
+import AboutUs from "./pages.tsx/AboutUs";
+
+export default function App() {
   return (
-    <div className="">
-      <div>
-        <Navbar />
-        <HeroSection />
-        <TrustedPartners />
-        <PaymentSolutions />
-        <Advantage />
-        <FeatureSpilt />
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
